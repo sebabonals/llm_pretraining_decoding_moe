@@ -1,0 +1,32 @@
+# TinyGPT homework — TP-1, TP-2 and TP-3.
+#
+#   python -m venv venv && source venv/bin/activate
+#   pip install -r requirements.txt
+#
+# Versions are the ones these notebooks were written and tested against. Newer ones
+# usually work; `torch` and `onnxruntime` are the two where a mismatch actually bites,
+# because TP-3 exports a graph and `torch.onnx.export` changes between releases.
+# TP-3's first cell prints what you are running, so put that in your report.
+
+# --- everything (TP-1, TP-2, TP-3) -----------------------------------------------
+torch==2.7.1
+transformers==5.12.0
+numpy>=1.26,<3
+matplotlib>=3.8
+tqdm>=4.66
+
+# --- TP-3: export and runtime ----------------------------------------------------
+onnx==1.22.0
+onnxruntime==1.30.0
+
+# --- TP-3 Part 3: the server and its clients -------------------------------------
+fastapi>=0.115,<1.0
+uvicorn>=0.32,<1.0
+pydantic>=2.9,<3
+requests>=2.32
+openai>=1.54
+
+# --- optional --------------------------------------------------------------------
+# Renders your exported graph inside the notebook (TP-3, after Task I). Without it the
+# notebook prints the graph as text instead and tells you to use https://netron.app.
+netron>=9.3
